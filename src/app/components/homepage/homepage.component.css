@@ -1,0 +1,6 @@
+.tableContent{
+    height: 36vh;
+
+    display: flex;
+    overflow-y: scroll;
+}

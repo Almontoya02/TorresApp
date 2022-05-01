@@ -1,0 +1,40 @@
+<div class="p-5">
+
+    <div>
+      <form>
+        <h3>Agregar Torre</h3>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre de Torre</label>
+          <input type="text" class="form-control"  name="nombreTorre" [(ngModel)]="nombreTorre" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Cantidad Apartamentos</label>
+          <input type="number" class="form-control" name="cantidadAptos"  [(ngModel)]="cantidadAptos" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="addTorre()">Agregar</button>
+      </form>
+    </div>
+    <hr/>
+
+    <div class="tableContent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id Torres</th>
+            <th scope="col">Nombre Torre</th>
+            <th scope="col">Cantidad Apartamentos</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of this.torreService.listTorres">
+            <td>{{item.idTorre}}</td>
+            <td>{{item.nombreTorre}}</td>
+            <td>{{item.cantidadAptos}}</td>
+            <td><button class="btn btn-danger" (click)="deleteTorre(item.idTorre)">Eliminar</button><button class="btn btn-primary">Editar</button></td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
