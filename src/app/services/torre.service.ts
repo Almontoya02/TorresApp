@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Torre } from '../models/torre.model';
 
 @Injectable({
@@ -14,21 +15,21 @@ export class TorreService {
   }
 
   async getAllTorresRequest(){
-    const data = await this.httpClient.get("http://localhost:4001/torre/listaTorre").toPromise();
+    const data = await this.httpClient.get(`${environment.serverUrl}/torre/listaTorre`).toPromise();
     const json = JSON.parse(JSON.stringify(data))
     this.listTorres=json
     return this.listTorres
   }
 
   async deleteTorre(idTorre:any){
-    const data = await this.httpClient.delete(`http://localhost:4001/torre/borrarTorre/${idTorre}`).toPromise();
+    const data = await this.httpClient.delete(`${environment.serverUrl}/torre/borrarTorre/${idTorre}`).toPromise();
     const json = JSON.parse(JSON.stringify(data))
-    console.log(idTorre,`http://localhost:4001/torre/borrarTorre/${idTorre}`)
+    console.log(idTorre,`${environment.serverUrl}/torre/borrarTorre/${idTorre}`)
     console.log(json,"Eliminado papu")
     return json.mensaje
   }
   async addTorre(nombreTorre:string,cantidadAptos:number){
-    const data =  await this.httpClient.post(`http://localhost:4001/torre/crearTorre`,
+    const data =  await this.httpClient.post(`${environment.serverUrl}/torre/crearTorre`,
       {
         nombreTorre,
         cantidadAptos
