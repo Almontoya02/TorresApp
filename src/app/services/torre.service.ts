@@ -15,7 +15,11 @@ export class TorreService {
   }
 
   async getAllTorresRequest(){
-    const data = await this.httpClient.get(`${environment.serverUrl}/torre/listaTorre`).toPromise();
+    const data = await this.httpClient.get(`/torre/listaTorre`,{
+      headers:{
+        "Access-Control-Allow-Origin":"*"
+      }
+    }).toPromise();
     const json = JSON.parse(JSON.stringify(data))
     this.listTorres=json
     return this.listTorres

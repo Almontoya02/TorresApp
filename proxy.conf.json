@@ -1,0 +1,7 @@
+{
+    "/torre/*":{
+        "target":"https://api-devops.herokuapp.com",
+        "secure":false,
+        "changeOrigin":true
+    }
+}
