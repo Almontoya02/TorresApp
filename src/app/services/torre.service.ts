@@ -15,7 +15,7 @@ export class TorreService {
   }
 
   async getAllTorresRequest(){
-    const data = await this.httpClient.get(`/torre/listaTorre`,{
+    const data = await this.httpClient.get(`${environment.serverUrl}/torre/listaTorre`,{
       headers:{
         "Access-Control-Allow-Origin":"*"
       }

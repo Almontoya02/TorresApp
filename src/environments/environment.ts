@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl:"https://api-devops-web.azurewebsites.net"
+  serverUrl:"https://api-devops.herokuapp.com"
 };
 
 /*

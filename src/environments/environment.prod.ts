@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl:"https://api-devops-web.azurewebsites.net"
+  serverUrl:"https://api-devops.herokuapp.com"
 };
