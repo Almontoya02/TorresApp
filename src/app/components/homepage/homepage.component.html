@@ -1,41 +1,39 @@
-<div class="p-5">
-
-    <div>
-      <form>
-        <h3>Agregar Torre</h3>
-        <hr>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Nombre de Torre</label>
-          <input type="text" class="form-control"  name="nombreTorre" [(ngModel)]="nombreTorre" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Cantidad Apartamentos</label>
-          <input type="number" class="form-control" name="cantidadAptos"  [(ngModel)]="cantidadAptos" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="addTorre()">Agregar</button>
-      </form>
+<div class="p-3">
+  <div class="row">
+    <div class="col-6">
+        <form>
+          <h3>Agregar Torre</h3>
+          <hr>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre de Torre</label>
+            <input type="text" class="form-control"  name="nombreTorre" [(ngModel)]="nombreTorre" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Cantidad Apartamentos</label>
+            <input type="number" class="form-control" name="cantidadAptos"  [(ngModel)]="cantidadAptos" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Link URL Imagen</label>
+            <input type="text" class="form-control" name="cantidadAptos"  [(ngModel)]="img" id="exampleInputPassword1">
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="addTorre()">Agregar</button>
+        </form>
     </div>
-    <hr/>
+    <div class="col-6">
+      <div class="tableContent">
 
-    <div class="tableContent">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">id Torres</th>
-            <th scope="col">Nombre Torre</th>
-            <th scope="col">Cantidad Apartamentos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of this.torreService.listTorres">
-            <td>{{item.idTorre}}</td>
-            <td>{{item.nombreTorre}}</td>
-            <td>{{item.cantidadAptos}}</td>
-            <td>
-              
-            </td>
-          </tr>
-        </tbody>
-    </table>
+        <div *ngFor="let item of this.torreService.listTorres" class="card" style="width: 30rem;">
+          <img [src]="item.linkImagen" class="card-img-top" alt="...">
+          <div class="card-body">
+            <pre class="card-text">
+              <b>Nombre Torre: </b>{{item.nombreTorre}}
+              <b>Cantidad de Apartamentos: </b>{{item.cantidadAptos}}
+            </pre>
+          </div>
+        </div>
+        
+      </div>
     </div>
+  </div>
+
 </div>

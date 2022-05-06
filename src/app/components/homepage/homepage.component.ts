@@ -9,6 +9,7 @@ import { TorreService } from './../../services/torre.service';
 export class HomepageComponent implements OnInit {
   nombreTorre=""
   cantidadAptos=""
+  img=""
   constructor(public torreService:TorreService) {
     this.torreService.getAllTorresRequest()
    }
@@ -34,7 +35,7 @@ export class HomepageComponent implements OnInit {
       alert("Ingrese todos los campos")
       return
     }
-    const mensajeAdd = await this.torreService.addTorre(this.nombreTorre,Number(this.cantidadAptos))
+    const mensajeAdd = await this.torreService.addTorre(this.nombreTorre,Number(this.cantidadAptos),this.img)
     if(mensajeAdd==="Torre creada"){
       alert("Agregado con exito")
       this.torreService.getAllTorresRequest();

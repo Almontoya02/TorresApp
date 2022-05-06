@@ -1,6 +1,25 @@
 .tableContent{
-    height: 36vh;
-
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-y: scroll;
+    flex-direction: column;
+    gap: 20px;
+    height: 80vh;
+}
+
+img{
+    width: 20vw;
+    height: 20vh;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    background-color: aqua;
+}
+.card{
+    display: flex;
+    
 }

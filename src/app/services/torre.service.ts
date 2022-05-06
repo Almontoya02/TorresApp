@@ -32,11 +32,12 @@ export class TorreService {
     console.log(json,"Eliminado papu")
     return json.mensaje
   }
-  async addTorre(nombreTorre:string,cantidadAptos:number){
+  async addTorre(nombreTorre:string,cantidadAptos:number,linkImagen:string){
     const data =  await this.httpClient.post(`${environment.serverUrl}/torre/crearTorre`,
       {
         nombreTorre,
-        cantidadAptos
+        cantidadAptos,
+        linkImagen
       }
     ).toPromise();
     const json = JSON.parse(JSON.stringify(data))

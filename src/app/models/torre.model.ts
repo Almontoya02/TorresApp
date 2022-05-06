@@ -3,6 +3,7 @@ export class Torre {
         public idTorre: number,
         public nombreTorre: string,
         public cantidadAptos: number,
+        public linkImagen:string
     ) 
     { 
     }
